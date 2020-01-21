@@ -109,4 +109,4 @@ I recommend to use Postman, Swagger may have difficulty viewing large amounts of
 
 ## Conclusion
 
-I would be happy to answer all your questions, in particular on the aggregation algortihm and the choice of the data structure.
+I would be happy to answer all your questions, especially on the aggregation algortihm and the choice of the data structure.
