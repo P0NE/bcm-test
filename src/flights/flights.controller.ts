@@ -9,7 +9,10 @@ import {
 import { CreateFlightsDto } from "./flights.dto";
 import { FlightsService } from "./flights.service";
 import { AuthGuard } from "@nestjs/passport";
+import { ApiTags, ApiBearerAuth } from "@nestjs/swagger";
 
+@ApiTags("flight")
+@ApiBearerAuth()
 @Controller("api")
 export class FlightsController {
   constructor(private readonly FlightsService: FlightsService) {}
