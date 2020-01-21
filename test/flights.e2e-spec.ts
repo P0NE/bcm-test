@@ -2,10 +2,6 @@ import * as request from "supertest";
 import { Test, TestingModule } from "@nestjs/testing";
 import { INestApplication, HttpModule } from "@nestjs/common";
 import { FlightsModule } from "../src/flights/flights.module";
-import { AppModule } from "../src/app.module";
-import { CreateFlightsDto } from "../src/flights/flights.dto";
-import { FlightsService } from "../src/flights/flights.service";
-import { FlightsController } from "../src/flights/flights.controller";
 
 /**
  * Test end to end.

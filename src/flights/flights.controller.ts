@@ -3,10 +3,12 @@ import {
   Get,
   Query,
   HttpException,
-  HttpStatus
+  HttpStatus,
+  UseGuards
 } from "@nestjs/common";
 import { CreateFlightsDto } from "./flights.dto";
 import { FlightsService } from "./flights.service";
+import { AuthGuard } from "@nestjs/passport";
 
 @Controller("api")
 export class FlightsController {
@@ -16,6 +18,7 @@ export class FlightsController {
    * GET flights
    * @param {CreateFlightsDto} fligthsParams
    */
+  @UseGuards(AuthGuard("jwt"))
   @Get("flights")
   async getFlights(@Query() fligthsParams: CreateFlightsDto) {
     this.validateFlight(fligthsParams);
