@@ -20,7 +20,7 @@ I try to respect the time given (about 4 / 5 hours).
 
 I start the project in NodeJs / Typescript for being in agreement with the technological environment of the company.
 
-For building scalable and maintenable backend applications I like to use principles like dependency injection and DDD (Domain-Driven Design) architecture. That's why I choose NestJS framework. (It's also confortable for me, an old java developper :) )
+For building scalable and maintenable backend applications I like to use principles like dependency injection and DDD (Domain-Driven Design) architecture. That's why I choose NestJS framework. (It's also confortable for me, an old java developper :relaxed: )
 
 ## Installation
 
@@ -64,15 +64,15 @@ For authenticate, you have to call POST `auth/login` API.
 
 Example:
 
- `̀ curl -X POST http://localhost:3000/auth/login -d '{"username": "BCM", "password": "bcmenergy"}' -H "Content-Type: application/json"`
+ ```curl -X POST http://localhost:3000/auth/login -d '{"username": "BCM", "password": "bcmenergy"}' -H "Content-Type: application/json"```
 
  The API send you in return an access token :
 
- `{"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJDTSIsInN1YiI6MSwiaWF0IjoxNTc5NjAzMDUzLCJleHAiOjE1Nzk2MDMxMTN9.4crUNRJF0QWu3Spl9cpAKv-ZeY4Gvu7U2G-6l4DIsqQ"}`
+ ```{"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJDTSIsInN1YiI6MSwiaWF0IjoxNTc5NjAzMDUzLCJleHAiOjE1Nzk2MDMxMTN9.4crUNRJF0QWu3Spl9cpAKv-ZeY4Gvu7U2G-6l4DIsqQ"}```
 
 After you have to add this token to bearer authorization for every request to the API flights:
 
-`curl http://localhost:3000/flights?departure_airport=ORL&arrival_airport=CDG&departure_date=2019-03-20&tripType=R&return_date=2019-03-29 -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2Vybm..."`
+```curl http://localhost:3000/flights?departure_airport=ORL&arrival_airport=CDG&departure_date=2019-03-20&tripType=R&return_date=2019-03-29 -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2Vybm..."```
 
 For testing the API you can use Postman or directly the OpenApi definition (Swagger). The definition is basic and not contain all information than you can find in a production application (all possible responses definitions, models...).
 
@@ -90,3 +90,7 @@ I recommend to use Postman, Swagger may have difficulty viewing large amounts of
  * Beyond security, we need to be able to identify a user :heavy_check_mark:
  * Once security and identification in place, we need to be able to rate limit this API. The limit is up to you. :heavy_check_mark:
  
+ We are also interested in knowing:
+  * How you would deploy this in production.
+  -> 
+  * What technologies would you use to have a CI/CD running.
