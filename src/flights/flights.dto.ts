@@ -15,7 +15,7 @@ export class CreateFlightsDto {
   @IsString()
   arrival_airport: string;
 
-  @ApiProperty()
+  @ApiProperty({ type: String })
   @IsDate()
   @Type(() => Date)
   departure_date: Date;
