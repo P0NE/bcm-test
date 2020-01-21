@@ -12,6 +12,10 @@ import { FlightsService } from "./flights.service";
 export class FlightsController {
   constructor(private readonly FlightsService: FlightsService) {}
 
+  /**
+   * GET flights
+   * @param {CreateFlightsDto} fligthsParams
+   */
   @Get("flights")
   async getFlights(@Query() fligthsParams: CreateFlightsDto) {
     this.validateFlight(fligthsParams);
@@ -32,7 +36,7 @@ export class FlightsController {
           status: HttpStatus.BAD_REQUEST,
           error: "You have to send a return date if tripType param is set to R"
         },
-        404
+        400
       );
     }
     if (flightsParams?.return_date < flightsParams.departure_date) {
@@ -41,7 +45,7 @@ export class FlightsController {
           status: HttpStatus.BAD_REQUEST,
           error: "The return date is before the departure date"
         },
-        404
+        400
       );
     }
   }

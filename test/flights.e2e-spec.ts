@@ -9,16 +9,14 @@ import { FlightsController } from "../src/flights/flights.controller";
 
 /**
  * Test end to end.
+ * Simple test for checking specify validation of our api
  */
 describe("Flight", () => {
   let app: INestApplication;
 
   beforeAll(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      imports: [AppModule, FlightsModule, HttpModule],
-      providers: [FlightsService],
-      exports: [FlightsService],
-      controllers: [FlightsController]
+      imports: [FlightsModule]
     }).compile();
 
     app = module.createNestApplication();
@@ -27,9 +25,14 @@ describe("Flight", () => {
 
   it("should return A 400 bad request if return date before departure date ", () => {
     return request(app.getHttpServer())
-      .get(
-        "/api/flights?departure_airport=ORL&arrival_airport=CDG&departure_date=2019-03-30&tripType=R&return_date=2019-03-29"
-      )
+      .get("/api/flights")
+      .query({
+        departure_airport: "ORL",
+        arrival_airport: "CDG",
+        departure_date: "2019-03-30",
+        tripType: "R",
+        return_date: "2019-03-29"
+      })
       .expect(400);
   });
 
@@ -39,9 +42,8 @@ describe("Flight", () => {
       .query({
         departure_airport: "ORL",
         arrival_airport: "CDG",
-        departure_date: "2019 - 03 - 30",
-        tripType: "R",
-        return_date: "2019 - 03 - 29"
+        departure_date: "2019-03-30",
+        tripType: "R"
       })
       .expect(400);
   });
