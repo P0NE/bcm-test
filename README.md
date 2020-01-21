@@ -108,5 +108,12 @@ I recommend to use Postman, Swagger may have difficulty viewing large amounts of
   We can couple all this process with tools like SonarQube for analysing the code base and decide of a strategy with code coverage and errors detected if the CI can be launched.
 
 ## Conclusion
-
-I would be happy to answer all your questions, especially on the aggregation algortihm and the choice of the data structure.
+Things I wish I could have done with more time:
+- More TU for flights service.
+- Create a database for store the user informations.
+- Use bcrypt for salting and hash password.
+- Create environment variables to store the secret for JWT strategy.
+- Try to find a strategy for caching system with redis.
+- The search radius bonus.
+  
+I would be happy to answer all your questions, especially on the aggregation algorithm and the choice of the data structure.
