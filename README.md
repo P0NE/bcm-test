@@ -92,5 +92,21 @@ I recommend to use Postman, Swagger may have difficulty viewing large amounts of
  
  We are also interested in knowing:
   * How you would deploy this in production.
-  -> 
+  
+  -> We can use a docker container (I created one) to deploy on a webapp on the cloud (AWS, Azure, GCP).
   * What technologies would you use to have a CI/CD running.
+  
+  -> We can use Jenkins or Azure devops (base on which cloud or not we want to use). It's important to couple a CI/CD with a git strategy. I like to use gitflow.
+  The process for the CI are:
+  - Install dependencies
+  - Code linting
+  - Runs tslint to check code style in project files
+  - Run unit tests
+  - Run end-to-end (E2E) tests
+  
+  Each merge on develop launch the CI/CD for the develop (alpha) plateform. When Develop is merged on Master, the CI/CD is launch on the beta plateform. And if all works like we want, we can autorize manualy the deployment on our production plateform.
+  We can couple all this process with tools like SonarQube for analysing the code base and decide of a strategy with code coverage and errors detected if the CI can be launched.
+
+## Conclusion
+
+I would be happy to answer all your questions, in particular on the aggregation algortihm and the choice of the data structure.
